@@ -3,120 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game Portal - Login</title>
+  <title>Login</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: Arial, sans-serif;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      background: linear-gradient(135deg, #141e30, #243b55);
-      color: white;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
     }
+
     .container {
-      width: 100%;
-      max-width: 400px;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
-    h2 {
+      background: #0d1117;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      width: 300px;
       text-align: center;
+    }
+
+    h2 {
+      color: white;
       margin-bottom: 20px;
     }
-    .form-group {
-      margin-bottom: 15px;
-    }
-    label {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 14px;
-    }
+
     input {
       width: 100%;
       padding: 10px;
+      margin: 10px 0;
       border: none;
-      border-radius: 6px;
-      outline: none;
-      font-size: 16px;
+      border-radius: 5px;
     }
+
     button {
       width: 100%;
       padding: 10px;
-      margin-top: 10px;
-      background: #4CAF50;
+      background: #2ecc71;
       border: none;
-      border-radius: 6px;
+      border-radius: 5px;
       color: white;
       font-size: 16px;
       cursor: pointer;
-      transition: background 0.3s ease;
     }
+
     button:hover {
-      background: #45a049;
+      background: #27ae60;
     }
-    .toggle-link {
-      display: block;
-      text-align: center;
+
+    .switch {
       margin-top: 15px;
-      color: #aaa;
-      cursor: pointer;
-      font-size: 14px;
+      color: #bbb;
     }
-    .toggle-link:hover {
-      text-decoration: underline;
-      color: white;
-    }
-    .hidden {
-      display: none;
+
+    .switch a {
+      color: #2ecc71;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Login Form -->
-    <div id="loginForm">
-      <h2>Login</h2>
-      <div class="form-group">
-        <label for="loginEmail">Email</label>
-        <input type="email" id="loginEmail" placeholder="Enter email">
-      </div>
-      <div class="form-group">
-        <label for="loginPassword">Password</label>
-        <input type="password" id="loginPassword" placeholder="Enter password">
-      </div>
-      <button onclick="alert('Login system not yet connected!')">Login</button>
-      <span class="toggle-link" onclick="toggleForms()">Don't have an account? Sign Up</span>
-    </div>
-
-    <!-- Signup Form -->
-    <div id="signupForm" class="hidden">
-      <h2>Sign Up</h2>
-      <div class="form-group">
-        <label for="signupEmail">Email</label>
-        <input type="email" id="signupEmail" placeholder="Enter email">
-      </div>
-      <div class="form-group">
-        <label for="signupPassword">Password</label>
-        <input type="password" id="signupPassword" placeholder="Enter password">
-      </div>
-      <div class="form-group">
-        <label for="signupConfirm">Confirm Password</label>
-        <input type="password" id="signupConfirm" placeholder="Confirm password">
-      </div>
-      <button onclick="alert('Signup system not yet connected!')">Sign Up</button>
-      <span class="toggle-link" onclick="toggleForms()">Already have an account? Login</span>
+    <h2>Login</h2>
+    <form>
+      <input type="email" placeholder="Enter email" required>
+      <input type="password" placeholder="Enter password" required>
+      <button type="submit">Login</button>
+    </form>
+    <div class="switch">
+      Don’t have an account? <a href="#">Sign Up</a>
     </div>
   </div>
-
-  <script>
-    function toggleForms() {
-      document.getElementById("loginForm").classList.toggle("hidden");
-      document.getElementById("signupForm").classList.toggle("hidden");
-    }
-  </script>
 </body>
 </html>
